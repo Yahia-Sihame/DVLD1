@@ -1,0 +1,18 @@
+C:\Users\Hp\Desktop\DVLD\DVLD-Buisness-Layer\bin\Debug\DVLD-Buisness-Layer.dll
+C:\Users\Hp\Desktop\DVLD\DVLD-Buisness-Layer\bin\Debug\DVLD-Buisness-Layer.pdb
+C:\Users\Hp\Desktop\DVLD\DVLD-Buisness-Layer\bin\Debug\DVLD-Data-Access.dll
+C:\Users\Hp\Desktop\DVLD\DVLD-Buisness-Layer\bin\Debug\DVLD-Data-Access.pdb
+C:\Users\Hp\Desktop\DVLD\DVLD-Buisness-Layer\obj\Debug\DVLD-Buisness-Layer.csproj.AssemblyReference.cache
+C:\Users\Hp\Desktop\DVLD\DVLD-Buisness-Layer\obj\Debug\DVLD-Buisness-Layer.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\DVLD\DVLD-Buisness-Layer\obj\Debug\DVLD-Bui.3A4A0341.Up2Date
+C:\Users\Hp\Desktop\DVLD\DVLD-Buisness-Layer\obj\Debug\DVLD-Buisness-Layer.dll
+C:\Users\Hp\Desktop\DVLD\DVLD-Buisness-Layer\obj\Debug\DVLD-Buisness-Layer.pdb
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Buisness-Layer\obj\Debug\DVLD-Buisness-Layer.csproj.AssemblyReference.cache
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Buisness-Layer\obj\Debug\DVLD-Buisness-Layer.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Buisness-Layer\obj\Debug\DVLD-Buisness-Layer.dll
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Buisness-Layer\obj\Debug\DVLD-Buisness-Layer.pdb
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Buisness-Layer\bin\Debug\DVLD-Buisness-Layer.dll
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Buisness-Layer\bin\Debug\DVLD-Buisness-Layer.pdb
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Buisness-Layer\bin\Debug\DVLD-Data-Access.dll
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Buisness-Layer\bin\Debug\DVLD-Data-Access.pdb
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Buisness-Layer\obj\Debug\DVLD-Bui.3A4A0341.Up2Date

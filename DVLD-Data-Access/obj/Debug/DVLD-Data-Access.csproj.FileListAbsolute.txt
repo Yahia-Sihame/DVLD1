@@ -1,0 +1,12 @@
+C:\Users\Hp\Desktop\DVLD\DVLD-Data-Access\bin\Debug\DVLD-Data-Access.dll
+C:\Users\Hp\Desktop\DVLD\DVLD-Data-Access\bin\Debug\DVLD-Data-Access.pdb
+C:\Users\Hp\Desktop\DVLD\DVLD-Data-Access\obj\Debug\DVLD-Data-Access.csproj.AssemblyReference.cache
+C:\Users\Hp\Desktop\DVLD\DVLD-Data-Access\obj\Debug\DVLD-Data-Access.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\DVLD\DVLD-Data-Access\obj\Debug\DVLD-Data-Access.dll
+C:\Users\Hp\Desktop\DVLD\DVLD-Data-Access\obj\Debug\DVLD-Data-Access.pdb
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Data-Access\bin\Debug\DVLD-Data-Access.dll
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Data-Access\bin\Debug\DVLD-Data-Access.pdb
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Data-Access\obj\Debug\DVLD-Data-Access.csproj.AssemblyReference.cache
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Data-Access\obj\Debug\DVLD-Data-Access.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Data-Access\obj\Debug\DVLD-Data-Access.dll
+C:\Users\Hp\Desktop\bureau yahya\programming adv\corse 19 full project\DVLD My Solution\DVLD Project Final\DVLD-Data-Access\obj\Debug\DVLD-Data-Access.pdb
