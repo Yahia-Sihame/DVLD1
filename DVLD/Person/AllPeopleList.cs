@@ -37,6 +37,7 @@ namespace DVLD.Person
             
         }
 
+
         private void AllPeopleList_Load(object sender, EventArgs e)
         {
             DgvPeoples.DataSource = _DataPerson;
