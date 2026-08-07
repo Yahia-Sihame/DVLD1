@@ -1,2 +1,12 @@
 .vs
+bin
 Debug
+*.dll
+
+*.pdb
+/DVLD-Data-Access/obj/Debug/DVLD-Data-Access.dll
+/DVLD-Data-Access/obj/Debug/DVLD-Data-Access.pdb
+/DVLD-Data-Access/bin/Debug/DVLD-Data-Access.pdb
+/DVLD-Data-Access/bin/Debug/DVLD-Data-Access.dll
+/DVLD-Buisness-Layer/obj/Debug/DVLD-Buisness-Layer.csproj.AssemblyReference.cache
+/DVLD-Buisness-Layer/bin/Debug/DVLD-Data-Access.pdb

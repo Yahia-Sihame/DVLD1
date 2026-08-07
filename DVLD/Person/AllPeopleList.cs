@@ -168,14 +168,14 @@ namespace DVLD.Person
 
         private void _AddPerson()
         {
-            Person.FormAddUpdatePerson formAddUpdate = new Person.FormAddUpdatePerson();
+            FormAddUpdatePerson formAddUpdate = new FormAddUpdatePerson();
             formAddUpdate.ShowDialog();
         }
 
         private void _UpdatePerson()
         {
             int PersonID = Convert.ToInt32(DgvPeoples.CurrentRow.Cells[0].Value);
-            Person.FormAddUpdatePerson formAddUpdate = new Person.FormAddUpdatePerson(PersonID);
+            FormAddUpdatePerson formAddUpdate = new FormAddUpdatePerson(PersonID);
             formAddUpdate.ShowDialog();
         }
 
@@ -196,7 +196,7 @@ namespace DVLD.Person
             int PersonID = Convert.ToInt32(DgvPeoples.CurrentRow.Cells[0].Value);
             if (MessageBox.Show("Are you sure you want to Delete this Person with id = " + PersonID, "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                Person.FormAddUpdatePerson formAddUpdate = new Person.FormAddUpdatePerson(PersonID);
+                FormAddUpdatePerson formAddUpdate = new FormAddUpdatePerson(PersonID);
                 bool isDeleted = formAddUpdate.DeletePerson(PersonID);
                 if (isDeleted)
                 {

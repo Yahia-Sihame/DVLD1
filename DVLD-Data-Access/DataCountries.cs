@@ -14,7 +14,7 @@ namespace DVLD_Data_Access
         public static DataTable AllCountries()
         {
             DataTable dt = new DataTable();
-            string query = "select CountryName from countriesz";
+            string query = "select CountryName from countries";
             SqlCommand sqlCommand = new SqlCommand(query,GlobalAccesDataBase.conn);
             try
             {
