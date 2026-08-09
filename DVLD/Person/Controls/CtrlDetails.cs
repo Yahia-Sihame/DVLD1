@@ -14,14 +14,14 @@ namespace DVLD.Person.Controls
 {
     public partial class CtrlDetails : UserControl
     {
-        int _Id; 
-        ClsPerson _Person;
+        private int _Id; 
+        private ClsPerson _Person;
         public CtrlDetails()
         {
             InitializeComponent();
         }
 
-        private void initialize()
+        private void _initialize()
         {
             lblPersonID.Text = "[????]";
             lblFullName.Text = "[????]";
@@ -69,12 +69,16 @@ namespace DVLD.Person.Controls
 
             if (!ClsPerson.isPersonExist(_Id))
             {
-                initialize();
+                _initialize();
                 MessageBox.Show("This Person Doas Not Exist");
                 return;
             }
 
             _FillFields();
+        }
+        public void Initialize()
+        {
+            _initialize();
         }
 
         private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -82,11 +86,6 @@ namespace DVLD.Person.Controls
             FormAddUpdatePerson formAddUpdatePerson = new FormAddUpdatePerson(_Id);
             formAddUpdatePerson.ShowDialog();
             _FillFields();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

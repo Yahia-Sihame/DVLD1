@@ -485,7 +485,6 @@
             this.txtSecondName.Name = "txtSecondName";
             this.txtSecondName.Size = new System.Drawing.Size(167, 22);
             this.txtSecondName.TabIndex = 2;
-            this.txtSecondName.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateTxt);
             // 
             // label1
             // 

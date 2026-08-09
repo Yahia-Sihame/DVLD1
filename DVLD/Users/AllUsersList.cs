@@ -173,5 +173,28 @@ namespace DVLD.Peoples.Users
             formAddUpdateUser.ShowDialog();
             _LoadAllUsers();
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserId = Convert.ToInt32(dgvUsers.CurrentRow.Cells[0].Value);
+            if (MessageBox.Show("Are you sure you want to Delete this User with id = " + UserId, "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                bool isDeleted = ClsUser.DeleteUser(UserId);
+                if (isDeleted)
+                {
+                    MessageBox.Show("The User Deleted Susseccfully");
+                    _LoadAllUsers();
+                }
+                else
+                    MessageBox.Show("Delete Faild");
+            }
+        }
+
+        private void ChangePasswordtoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int UserId = Convert.ToInt32(dgvUsers.CurrentRow.Cells[0].Value);
+            FormUpdateUserPassword form = new FormUpdateUserPassword(UserId);
+            form.ShowDialog();
+        }
     }
 }

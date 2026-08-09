@@ -17,6 +17,9 @@ namespace DVLD.Person
 {
     public partial class FormAddUpdatePerson : Form
     {
+
+        public event Action<object,int> SendIdBack;
+
         int Id { get; set; }
         ClsPerson Person1;
 
@@ -91,8 +94,6 @@ namespace DVLD.Person
             dtpDateOfBirth.MinDate = DateTime.Now.AddYears(-100);
 
         }
-
-        
 
         private void _InitializeUpdate()
         {
@@ -237,6 +238,7 @@ namespace DVLD.Person
                 if (Person1.save())
                 {
                     MessageBox.Show("Data Saved Successfully with ID: " + Person1.PersonId, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    SendIdBack?.Invoke(this, Person1.PersonId);
                 }
                 else
                     MessageBox.Show("Error: Data was NOT saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -244,7 +246,9 @@ namespace DVLD.Person
             else
             {
                 if (Person1.save())
+                {
                     MessageBox.Show("Data Update Successfully with ID: " + Person1.PersonId, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
                     MessageBox.Show("Error: Data was NOT saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

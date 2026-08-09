@@ -18,12 +18,10 @@ namespace DVLD.Users
     {
         enum enMode { Add = 0 , Update = 1}
         enMode _Mode = enMode.Add;
-
+        int _UserId = -1;
         ClsUser _User = null;
-        int _PersonId = -1;
         public FormAddUpdateUser()
         {
-           // PersonInfoWithFilter.PersonIdForImplemented = -1;
             InitializeComponent();
 
             _Mode = enMode.Add;
@@ -31,70 +29,103 @@ namespace DVLD.Users
 
         public FormAddUpdateUser(int UserId)
         {
-            PersonInfoWithFilter.Gett(UserId);
-           // PersonInfoWithFilter.PersonIdForImplemented = _User.PersonId;
+            _UserId = UserId;
+            _User = ClsUser.FindUserByUserId(_UserId); 
+            _Mode = enMode.Update;
             InitializeComponent();
 
-            _Mode = enMode.Update;
 
         }
 
         private void FormAddUpdateUser_Load(object sender, EventArgs e)
         {
             Initialize();
-        }
 
+        }
+  
         void Initialize()
         {
             if ( _Mode == enMode.Add)
             {
                 lblTitle.Text = "Add User";
-                LoginInfoScreen.Enabled = false;
+                UserInfoScreen.Enabled = false;
                 btnSave.Enabled = false;
-                _PersonId = PersonInfoWithFilter.SharePersonId;
+                personInfoWithFilter1.EnableGbFilter = true;
             }
             else
             {
                 lblTitle.Text = "Update User";
-                LoginInfoScreen.Enabled = false;
+                UserInfoScreen.Enabled = false;
                 btnSave.Enabled = false;
-               // _PersonId = PersonInfoWithFilter.PersonIdForImplemented; 
+                personInfoWithFilter1.EnableGbFilter = false;
+                personInfoWithFilter1.CbFilterby = 1;
+                personInfoWithFilter1.TextFilterValue = _User.PersonId.ToString();
+                personInfoWithFilter1.LoadPerson();
             }
         }
 
         private void personInfoWithFilter1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if ( _Mode== enMode.Add)
+            int Id; 
+            if (personInfoWithFilter1.CbFilterby == 0)
             {
-                _PersonId = PersonInfoWithFilter.SharePersonId; 
-                if (_PersonId != -1)
+                Id = ClsPerson.Find(personInfoWithFilter1.NationalNu).PersonId;
+            }
+            else 
+                Id = personInfoWithFilter1.PersonId;
+
+            if ( _Mode  == enMode.Add )
+            {
+                if (ClsUser.IsUserExistForPersonId(Id))
                 {
-                    if (ClsUser.IsUserExistForPersonId(_PersonId))
-                    {
-                        MessageBox.Show("This Person Is Already have User!", "ERRER", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        btnSave.Enabled = false;
-                        return;
-                    }
-                    if (tcuseraddupdate.SelectedIndex < tcuseraddupdate.TabCount - 1)
-                    {
-                        tcuseraddupdate.SelectedIndex++;
-                        LoginInfoScreen.Enabled = true;
-                        btnSave.Enabled = true;
-                    }
+                    MessageBox.Show("This Person Is Already have User!", "ERRER", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    btnSave.Enabled = false;
+                    return;
+                }
+                if ( ClsPerson.isPersonExist(Id) )
+                {
+                    tcuseraddupdate.SelectedTab = tcuseraddupdate.TabPages["UserInfoScreen"] ;
+                    lblUserID.Text = Id.ToString() ;
+                    btnSave.Enabled = true;
+                    chkIsActive.Checked = true ;
+                    UserInfoScreen.Enabled = true;
                 }
                 else
                     MessageBox.Show("You Have To SelectPerson First");
             }
-            else
+            else if ( _Mode == enMode.Update)
             {
-                if (_PersonId != -1)
+                if (ClsPerson.isPersonExist(Id))
                 {
-                    if (!ClsUser.IsUserExistForPersonId(_PersonId))
+              
+                        tcuseraddupdate.SelectedTab = tcuseraddupdate.TabPages["UserInfoScreen"];
+                        UserInfoScreen.Enabled = true;
+                        btnSave.Enabled = true;
+                        
+
+                        txtUserName.Text = _User.UserName;
+                        txtPassword.Text = _User.Password;
+                        txtConfirmPassword.Text = _User.Password;
+               
+                }
+            }
+
+
+            if (_Mode == enMode.Update)
+            {
+
+            }
+            
+            if ( _Mode == enMode.Update) 
+            {
+                if (ClsUser.FindUserByUserId(_UserId).PersonId != -1)
+                {
+                    if (!ClsUser.IsUserExistForPersonId(ClsUser.FindUserByUserId(_UserId).PersonId))
                     {
                         MessageBox.Show("This Person Not have User!", "ERRER", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         btnSave.Enabled = false;
@@ -103,7 +134,7 @@ namespace DVLD.Users
                     if (tcuseraddupdate.SelectedIndex < tcuseraddupdate.TabCount - 1)
                     {
                         tcuseraddupdate.SelectedIndex++;
-                        LoginInfoScreen.Enabled = true;
+                        UserInfoScreen.Enabled = true;
                         btnSave.Enabled = true;
                         lblUserID.Text = _User.UserId.ToString();
                         txtUserName.Text = _User.UserName.ToString();
@@ -142,16 +173,20 @@ namespace DVLD.Users
             {
                 errorProvider1.SetError(txtPassword, null);
             }
-
-            IsFound = ClsUser.IsUserExist(txtUserName.Text);
+            if (_Mode == enMode.Update)
+            {
+                IsFound = (ClsUser.IsUserExist(txtUserName.Text) && txtUserName.Text != _User.UserName.ToString());
+            }
+            else
+                IsFound = (ClsUser.IsUserExist(txtUserName.Text));
 
             if (IsFound)
             {
                 errorProvider1.SetError(txtUserName, "This User Name already exist!");
                 IsValidate = false;
             }
-            else 
-                errorProvider1.SetError(txtPassword,null);
+            else
+                errorProvider1.SetError(txtPassword, null);
 
             if ( txtPassword.Text != txtConfirmPassword.Text)
             {
@@ -168,9 +203,9 @@ namespace DVLD.Users
         void AddUser()
         {
             ClsUser clsUser = new ClsUser();
-            clsUser.PersonId = PersonInfoWithFilter.SharePersonId;
             clsUser.UserName = txtUserName.Text;
             clsUser.Password = txtPassword.Text;
+            clsUser.PersonId = Convert.ToInt32(lblUserID.Text);
             if (chkIsActive.Checked)
             {
                 clsUser.IsActive = true;
@@ -220,6 +255,12 @@ namespace DVLD.Users
             this.Close();
         }
 
+        public static bool DeletUser(int UserId)
+        {
+            return ClsUser.DeleteUser(UserId);
+        }
+
+     
         private void LoginInfoScreen_Click(object sender, EventArgs e)
         {
 

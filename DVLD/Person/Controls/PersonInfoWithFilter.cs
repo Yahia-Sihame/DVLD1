@@ -15,49 +15,62 @@ namespace DVLD.Users.Controls
 {
     public partial class PersonInfoWithFilter : UserControl
     {
-         enum enMode { Add =  0, Update = 1 }
-         enMode Mode = enMode.Add ;
-        int _PersonId = -1;
-        string NationalNu = string.Empty;
-        public static int SharePersonId = -1;
+        private int _PersonId = -1;
+        public string NationalNu = string.Empty;
+
+
+        public string TextFilterValue
+        {
+            get { return txtFilterValue.Text; }
+            set { txtFilterValue.Text = value; }
+        }
+        public int PersonId
+        {
+            get {  return _PersonId; } 
+        }
+        public bool ShowBtnAdd
+        {
+            get { return btnAddPerson.Enabled; }
+            set { btnAddPerson.Enabled = value; }
+        }
+        public bool EnableGbFilter
+        {
+            get { return gbFilters.Enabled; }
+            set { gbFilters.Enabled = value; }
+        }
+        public int CbFilterby
+        {
+            get
+            {
+                return cbFilterBy.SelectedIndex;
+            }
+
+            set { cbFilterBy.SelectedIndex = value; }
+        }
         public PersonInfoWithFilter()
         {
             InitializeComponent();
         }
-
-        private void PersonInfoWithFilter_Load(object sender, EventArgs e)
-        {
-            InitializeForm();
-        }
-
-        public static void Gett(int UserId)
-        {
-
-        }
-        void InitializeForm()
-        {
-            cbFilterBy.SelectedIndex = 1;
-
-            if (Mode == enMode.Update)
-            {
-                gbFilters.Enabled = false;
-                //txtFilterValue.Text = PersonIdForImplemented.ToString();
-                FillFields();
-                return;
-            }
-            else
-            {
-                //PersonIdForImplemented = -1;
-                gbFilters.Enabled = true;
-                txtFilterValue.Text = string.Empty; 
-            }
-        }
-        void FillFields()
-        {
-            //ctrlDetails1.LoadPerson(PersonIdForImplemented);
-        }
-        
         private void btnFind_Click(object sender, EventArgs e)
+        {
+            LoadPerson();
+                
+        }
+        private void btnAddPerson_Click(object sender, EventArgs e)
+        {
+            FormAddUpdatePerson frm = new FormAddUpdatePerson();
+            frm.SendIdBack += UseNewPerson;
+            frm.ShowDialog();
+        }
+
+        void UseNewPerson(object sender , int PersonId)
+        {
+            txtFilterValue.Text = PersonId.ToString();
+            cbFilterBy.SelectedIndex = 1;
+            gbFilters.Enabled = false;
+            LoadPerson();
+        }        
+        public void LoadPerson()
         {
             if (string.IsNullOrEmpty(txtFilterValue.Text))
             {
@@ -67,27 +80,16 @@ namespace DVLD.Users.Controls
             else
             {
                 errorProvider1.SetError(txtFilterValue, null);
-                LoadPerson();
-            }
-                
-        }
-        private void btnAddPerson_Click(object sender, EventArgs e)
-        {
-            FormAddUpdatePerson frm = new FormAddUpdatePerson();
-            frm.ShowDialog();
-        }
-
-        void LoadPerson()
-        {
-            if (cbFilterBy.Text == "National No")
-            {
-                NationalNu = txtFilterValue.Text.Trim();
-                LoadPersonInfo(NationalNu);
-            }
-            else
-            {
-                _PersonId = Convert.ToInt32(txtFilterValue.Text);
-                LoadPersonInfo(_PersonId);
+                if (cbFilterBy.Text == "National No")
+                {
+                    NationalNu = txtFilterValue.Text.Trim();
+                    LoadPersonInfo(NationalNu);
+                }
+                else
+                {
+                    _PersonId = Convert.ToInt32(txtFilterValue.Text);
+                    LoadPersonInfo(PersonId);
+                }
             }
         }
         void LoadPersonInfo(string NationalNu)
@@ -96,7 +98,6 @@ namespace DVLD.Users.Controls
             if (isExist)
             {
                 ctrlDetails1.LoadPerson(ClsPerson.Find(NationalNu).PersonId);
-                SharePersonId = ClsPerson.Find(NationalNu).PersonId;
             }
             else
                 MessageBox.Show("This Person is Not Exist");
@@ -108,14 +109,12 @@ namespace DVLD.Users.Controls
             if (isExist)
             {
                 ctrlDetails1.LoadPerson(PersonId);
-                SharePersonId = PersonId;
             }
             else
             {
                 MessageBox.Show("This Person is Not Exist");
             }
         }
-
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(cbFilterBy.Text == "National No"))
@@ -124,8 +123,11 @@ namespace DVLD.Users.Controls
 
             }
         }
-
         private void gbFilters_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void PersonInfoWithFilter_Load(object sender, EventArgs e)
         {
 
         }

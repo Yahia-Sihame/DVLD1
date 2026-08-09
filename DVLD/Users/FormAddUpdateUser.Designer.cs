@@ -32,7 +32,8 @@
             this.tcuseraddupdate = new System.Windows.Forms.TabControl();
             this.PersonInfoScreen = new System.Windows.Forms.TabPage();
             this.personInfoWithFilter1 = new DVLD.Users.Controls.PersonInfoWithFilter();
-            this.LoginInfoScreen = new System.Windows.Forms.TabPage();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.UserInfoScreen = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblUserID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,13 +48,12 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnNext = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tcuseraddupdate.SuspendLayout();
             this.PersonInfoScreen.SuspendLayout();
-            this.LoginInfoScreen.SuspendLayout();
+            this.UserInfoScreen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -64,7 +64,7 @@
             // tcuseraddupdate
             // 
             this.tcuseraddupdate.Controls.Add(this.PersonInfoScreen);
-            this.tcuseraddupdate.Controls.Add(this.LoginInfoScreen);
+            this.tcuseraddupdate.Controls.Add(this.UserInfoScreen);
             this.tcuseraddupdate.Location = new System.Drawing.Point(53, 78);
             this.tcuseraddupdate.Name = "tcuseraddupdate";
             this.tcuseraddupdate.SelectedIndex = 0;
@@ -91,29 +91,43 @@
             this.personInfoWithFilter1.TabIndex = 0;
             this.personInfoWithFilter1.Load += new System.EventHandler(this.personInfoWithFilter1_Load);
             // 
-            // LoginInfoScreen
+            // btnNext
             // 
-            this.LoginInfoScreen.Controls.Add(this.pictureBox2);
-            this.LoginInfoScreen.Controls.Add(this.lblUserID);
-            this.LoginInfoScreen.Controls.Add(this.label4);
-            this.LoginInfoScreen.Controls.Add(this.chkIsActive);
-            this.LoginInfoScreen.Controls.Add(this.txtUserName);
-            this.LoginInfoScreen.Controls.Add(this.txtConfirmPassword);
-            this.LoginInfoScreen.Controls.Add(this.label1);
-            this.LoginInfoScreen.Controls.Add(this.label3);
-            this.LoginInfoScreen.Controls.Add(this.label2);
-            this.LoginInfoScreen.Controls.Add(this.txtPassword);
-            this.LoginInfoScreen.Controls.Add(this.pictureBox1);
-            this.LoginInfoScreen.Controls.Add(this.pictureBox8);
-            this.LoginInfoScreen.Controls.Add(this.pictureBox3);
-            this.LoginInfoScreen.Location = new System.Drawing.Point(4, 25);
-            this.LoginInfoScreen.Name = "LoginInfoScreen";
-            this.LoginInfoScreen.Padding = new System.Windows.Forms.Padding(3);
-            this.LoginInfoScreen.Size = new System.Drawing.Size(946, 449);
-            this.LoginInfoScreen.TabIndex = 1;
-            this.LoginInfoScreen.Text = "Login Info";
-            this.LoginInfoScreen.UseVisualStyleBackColor = true;
-            this.LoginInfoScreen.Click += new System.EventHandler(this.LoginInfoScreen_Click);
+            this.btnNext.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Image = global::DVLD.Properties.Resources.Next_32;
+            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNext.Location = new System.Drawing.Point(778, 401);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(126, 45);
+            this.btnNext.TabIndex = 120;
+            this.btnNext.Text = "Next   ";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // UserInfoScreen
+            // 
+            this.UserInfoScreen.Controls.Add(this.pictureBox2);
+            this.UserInfoScreen.Controls.Add(this.lblUserID);
+            this.UserInfoScreen.Controls.Add(this.label4);
+            this.UserInfoScreen.Controls.Add(this.chkIsActive);
+            this.UserInfoScreen.Controls.Add(this.txtUserName);
+            this.UserInfoScreen.Controls.Add(this.txtConfirmPassword);
+            this.UserInfoScreen.Controls.Add(this.label1);
+            this.UserInfoScreen.Controls.Add(this.label3);
+            this.UserInfoScreen.Controls.Add(this.label2);
+            this.UserInfoScreen.Controls.Add(this.txtPassword);
+            this.UserInfoScreen.Controls.Add(this.pictureBox1);
+            this.UserInfoScreen.Controls.Add(this.pictureBox8);
+            this.UserInfoScreen.Controls.Add(this.pictureBox3);
+            this.UserInfoScreen.Location = new System.Drawing.Point(4, 25);
+            this.UserInfoScreen.Name = "UserInfoScreen";
+            this.UserInfoScreen.Padding = new System.Windows.Forms.Padding(3);
+            this.UserInfoScreen.Size = new System.Drawing.Size(946, 449);
+            this.UserInfoScreen.TabIndex = 1;
+            this.UserInfoScreen.Text = "Login Info";
+            this.UserInfoScreen.UseVisualStyleBackColor = true;
+            this.UserInfoScreen.Click += new System.EventHandler(this.LoginInfoScreen_Click);
             // 
             // pictureBox2
             // 
@@ -262,20 +276,6 @@
             this.lblTitle.Text = "Add Application Type";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Image = global::DVLD.Properties.Resources.Next_32;
-            this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNext.Location = new System.Drawing.Point(778, 401);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(126, 45);
-            this.btnNext.TabIndex = 120;
-            this.btnNext.Text = "Next   ";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
             // btnSave
             // 
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -324,8 +324,8 @@
             this.Load += new System.EventHandler(this.FormAddUpdateUser_Load);
             this.tcuseraddupdate.ResumeLayout(false);
             this.PersonInfoScreen.ResumeLayout(false);
-            this.LoginInfoScreen.ResumeLayout(false);
-            this.LoginInfoScreen.PerformLayout();
+            this.UserInfoScreen.ResumeLayout(false);
+            this.UserInfoScreen.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -339,7 +339,7 @@
 
         private System.Windows.Forms.TabControl tcuseraddupdate;
         private System.Windows.Forms.TabPage PersonInfoScreen;
-        private System.Windows.Forms.TabPage LoginInfoScreen;
+        private System.Windows.Forms.TabPage UserInfoScreen;
         private Controls.PersonInfoWithFilter personInfoWithFilter1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnNext;
