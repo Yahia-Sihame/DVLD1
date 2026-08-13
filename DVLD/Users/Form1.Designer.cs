@@ -28,44 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlDetails1 = new DVLD.Person.Controls.CtrlDetails();
-            this.userControl11 = new DVLD.Users.Controls.UserControlFind();
+            this.ctrlUserInfo1 = new DVLD.Users.Controls.CtrlUserInfo();
             this.SuspendLayout();
             // 
-            // ctrlDetails1
+            // ctrlUserInfo1
             // 
-            this.ctrlDetails1.AutoSize = true;
-            this.ctrlDetails1.Location = new System.Drawing.Point(4, -2);
-            this.ctrlDetails1.Name = "ctrlDetails1";
-            this.ctrlDetails1.Size = new System.Drawing.Size(889, 282);
-            this.ctrlDetails1.TabIndex = 0;
-            // 
-            // userControl11
-            // 
-            this.userControl11.Location = new System.Drawing.Point(4, 286);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(894, 95);
-            this.userControl11.TabIndex = 1;
-            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
+            this.ctrlUserInfo1.Location = new System.Drawing.Point(10, 12);
+            this.ctrlUserInfo1.Name = "ctrlUserInfo1";
+            this.ctrlUserInfo1.Size = new System.Drawing.Size(906, 406);
+            this.ctrlUserInfo1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 379);
-            this.Controls.Add(this.userControl11);
-            this.Controls.Add(this.ctrlDetails1);
+            this.ClientSize = new System.Drawing.Size(928, 430);
+            this.Controls.Add(this.ctrlUserInfo1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Person.Controls.CtrlDetails ctrlDetails1;
-        private Controls.UserControlFind userControl11;
+        private Controls.CtrlUserInfo ctrlUserInfo1;
     }
 }

@@ -129,7 +129,7 @@ namespace DVLD.Users.Controls
         }
         private void PersonInfoWithFilter_Load(object sender, EventArgs e)
         {
-
+            cbFilterBy.SelectedIndex = 0;
         }
     }
 }

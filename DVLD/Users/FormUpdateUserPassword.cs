@@ -38,8 +38,7 @@ namespace DVLD.Users
                 return;
             }
 
-            userControlFind1.LoadUserinfo(_UserId);
-            ctrlDetails1.LoadPerson(_user.PersonId);
+            ctrlUserInfo1.LoadAllUserInfo(_UserId);
 
 
         }

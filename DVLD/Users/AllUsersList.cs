@@ -196,5 +196,10 @@ namespace DVLD.Peoples.Users
             FormUpdateUserPassword form = new FormUpdateUserPassword(UserId);
             form.ShowDialog();
         }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

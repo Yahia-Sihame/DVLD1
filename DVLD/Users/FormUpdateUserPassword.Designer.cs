@@ -41,8 +41,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ctrlDetails1 = new DVLD.Person.Controls.CtrlDetails();
-            this.userControlFind1 = new DVLD.Users.Controls.UserControlFind();
+            this.ctrlUserInfo1 = new DVLD.Users.Controls.CtrlUserInfo();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -178,26 +177,19 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // ctrlDetails1
+            // ctrlUserInfo1
             // 
-            this.ctrlDetails1.AutoSize = true;
-            this.ctrlDetails1.Location = new System.Drawing.Point(34, 26);
-            this.ctrlDetails1.Name = "ctrlDetails1";
-            this.ctrlDetails1.Size = new System.Drawing.Size(889, 282);
-            this.ctrlDetails1.TabIndex = 8;
-            // 
-            // userControlFind1
-            // 
-            this.userControlFind1.Location = new System.Drawing.Point(34, 314);
-            this.userControlFind1.Name = "userControlFind1";
-            this.userControlFind1.Size = new System.Drawing.Size(894, 95);
-            this.userControlFind1.TabIndex = 0;
+            this.ctrlUserInfo1.Location = new System.Drawing.Point(12, 12);
+            this.ctrlUserInfo1.Name = "ctrlUserInfo1";
+            this.ctrlUserInfo1.Size = new System.Drawing.Size(906, 406);
+            this.ctrlUserInfo1.TabIndex = 149;
             // 
             // FormUpdateUserPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 618);
+            this.Controls.Add(this.ctrlUserInfo1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label4);
@@ -209,9 +201,8 @@
             this.Controls.Add(this.txtNewPassword);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.ctrlDetails1);
-            this.Controls.Add(this.userControlFind1);
             this.Name = "FormUpdateUserPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.FormUpdateUserPassword_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -224,9 +215,6 @@
         }
 
         #endregion
-
-        private Controls.UserControlFind userControlFind1;
-        private Person.Controls.CtrlDetails ctrlDetails1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCurrentPassword;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -239,5 +227,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Controls.CtrlUserInfo ctrlUserInfo1;
     }
 }

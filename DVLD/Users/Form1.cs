@@ -33,12 +33,16 @@ namespace DVLD.Users
 
         void LoadData()
         {
-            ctrlDetails1.LoadPerson(_User.PersonId);
-            userControl11.LoadUserinfo(_UserId);
+            ctrlUserInfo1.LoadAllUserInfo(_UserId);
         }
        
 
         private void userControl11_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

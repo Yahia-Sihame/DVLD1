@@ -143,6 +143,7 @@ namespace DVLD.Person
         private void FormAddUpdatePerson_Load(object sender, EventArgs e)
         {
             _LoadForm();
+            btnClose.CausesValidation = false;
         }
 
         private void cmbCountry_SelectedIndexChanged(object sender, EventArgs e)
@@ -361,6 +362,19 @@ namespace DVLD.Person
             }
             else 
                 errorProvider1.SetError(txtNationalNo, null);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+
+
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
